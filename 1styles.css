@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+body {
+  background: linear-gradient(to right, #0091ea, #673ab7);
+  font-family: "Poppins", sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.clock {
+  font-size: 4rem;
+  text-shadow: 0.25rem 0.25rem 0.6rem rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+#seconds {
+  min-width: 5.5rem;
+  
+/* Dark Mode Styles */
+.dark-mode body {
+  background: linear-gradient(to right, #121212, #1d1d1d);
+  color: #e0e0e0;
+}
+
+.dark-mode .clock {
+  text-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode a {
+  color: #80cbc4;
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
+  color: #ffffff;
+}
+
+}
