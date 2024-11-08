@@ -62,3 +62,27 @@ body {
 
 </body>
 </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Redirect</title>
+</head>
+<body>
+    <script>
+        let inputSequence = "";
+        const secretWord = "flappy";
+
+        document.addEventListener("keydown", (event) => {
+            inputSequence += event.key.toLowerCase();
+
+            // Keep only the last few characters to match the secret word's length
+            inputSequence = inputSequence.slice(-secretWord.length);
+
+            if (inputSequence === secretWord) {
+                window.location.href = "SpreadSheet.html"; // Replace with your target URL
+            }
+        });
+    </script>
+</body>
+</html>

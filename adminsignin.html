@@ -146,7 +146,13 @@ body {
 
     <a href="https://github.com/401128/shscraft" class="button" target="_blank">Shs Github User 3</a> 
 
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeJlzF81FC0RJyEKb3xvO7gwPf-yhPm0vba2f564Xoj7t-RA/viewform" class="button" target="_blank">Ban Appeal Form 4</a> 
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeJlzF81FC0RJyEKb3xvO7gwPf-yhPm0vba2f564Xoj7t-RA/viewform" class="button" target="_blank">Ban Appeal Form 4</a>
+
+    <h1>Secrets and Easter Egg</h1>
+    
+    <h2>404 Page: Konami Code</h2>
+    <h2>Index (home): secret</h2>
+    <h2>Rules: flappy</h2>
 
   </div> 
 
@@ -162,6 +168,240 @@ body {
 
 
 </html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error Page with Console</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .console {
+      background-color: black;
+      color: lime;
+      font-family: monospace;
+      padding: 20px;
+      width: 100%;
+      height: 300px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      box-sizing: border-box;
+    }
+    .console input {
+      background: none;
+      color: lime;
+      border: none;
+      width: 100%;
+      padding: 5px;
+      outline: none;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+    .dark-mode .console {
+      background-color: #333;
+      color: #00ff00;
+    }
+    .dark-mode .console input {
+      color: #00ff00;
+    }
+  </style>
+</head>
+<body>
+  <div class="console" id="console">
+    <div>Welcome to the Console. Type your command below:</div>
+    <input id="commandInput" type="text" placeholder="Type command here..." />
+  </div>
 
+  <section class="error">
+    <div class="error__content">
+      <div class="error__message message">
+        <h1 class="message__title">Page Not Found</h1>
+        <p class="message__text">
+          We're sorry, the page you were looking for isn't found here.
+        </p>
+      </div>
+      <div class="error__nav e-nav">
+        <a href="index.html" target="_blank" class="e-nav__link">Go to Homepage</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const commands = {};
+    
+    const customLog = (message) => {
+      const consoleElement = document.getElementById("console");
+      const newMessage = document.createElement("div");
+      newMessage.textContent = message;
+      consoleElement.appendChild(newMessage);
+      consoleElement.scrollTop = consoleElement.scrollHeight;
+    };
+
+    // Core Commands
+    commands.toggleDarkMode = () => {
+      document.body.classList.toggle("dark-mode");
+      customLog("Toggled dark mode.");
+    };
+
+    commands.clearConsole = () => {
+      const consoleElement = document.getElementById("console");
+      consoleElement.innerHTML = '<div>Console cleared.</div>';
+    };
+
+    commands.changeTextColor = (args) => {
+      const color = args[0];
+      if (color) {
+        document.getElementById("console").style.color = color;
+        customLog(`Changed text color to ${color}.`);
+      } else {
+        customLog("Please provide a color.");
+      }
+    };
+
+    commands.showDate = () => {
+      const date = new Date();
+      customLog(`Today's date is: ${date.toDateString()}`);
+    };
+
+    // Additional Commands
+    commands.showAlert = (args) => {
+      const message = args.join(" ");
+      alert(message);
+      customLog("Alert shown.");
+    };
+
+    commands.changeBackgroundColor = (args) => {
+      const color = args[0];
+      if (color) {
+        document.body.style.backgroundColor = color;
+        customLog(`Changed background color to ${color}.`);
+      } else {
+        customLog("Please provide a color.");
+      }
+    };
+
+    commands.toggleVisibility = (args) => {
+      const elementId = args[0];
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.style.display = element.style.display === "none" ? "block" : "none";
+        customLog(`Toggled visibility of ${elementId}.`);
+      } else {
+        customLog(`Element with ID ${elementId} not found.`);
+      }
+    };
+
+    commands.reverseText = (args) => {
+      const text = args.join(" ");
+      const reversed = text.split("").reverse().join("");
+      customLog(`Reversed text: ${reversed}`);
+    };
+
+    commands.changeText = (args) => {
+      const elementId = args[0];
+      const text = args.slice(1).join(" ");
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.textContent = text;
+        customLog(`Changed text of ${elementId} to "${text}".`);
+      } else {
+        customLog(`Element with ID ${elementId} not found.`);
+      }
+    };
+
+    commands.countdown = (args) => {
+      let seconds = parseInt(args[0]);
+      if (isNaN(seconds) || seconds < 1) {
+        customLog("Please provide a positive integer.");
+        return;
+      }
+      const countdownInterval = setInterval(() => {
+        if (seconds > 0) {
+          customLog(`Countdown: ${seconds--}`);
+        } else {
+          customLog("Countdown complete!");
+          clearInterval(countdownInterval);
+        }
+      }, 1000);
+    };
+
+    commands.getWindowSize = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      customLog(`Window size: ${width}x${height}`);
+    };
+
+    commands.showElement = (args) => {
+      const elementId = args[0];
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.style.display = "block";
+        customLog(`Displayed element with ID ${elementId}.`);
+      } else {
+        customLog(`Element with ID ${elementId} not found.`);
+      }
+    };
+
+    commands.generateRandomNumber = (args) => {
+      const min = parseInt(args[0]);
+      const max = parseInt(args[1]);
+      if (isNaN(min) || isNaN(max) || min > max) {
+        customLog("Please provide valid min and max values.");
+      } else {
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        customLog(`Generated random number: ${randomNumber}`);
+      }
+    };
+
+    commands.scrollToBottom = () => {
+      window.scrollTo(0, document.body.scrollHeight);
+      customLog("Scrolled to bottom.");
+    };
+
+    // Help Command
+    commands.help = () => {
+      const helpText = `
+        Available Commands:
+        - toggleDarkMode: Toggle dark mode.
+        - clearConsole: Clears the console.
+        - changeTextColor <color>: Change the console text color.
+        - showDate: Display today's date.
+        - showAlert <message>: Show an alert with the provided message.
+        - changeBackgroundColor <color>: Change the background color.
+        - toggleVisibility <elementId>: Toggle visibility of an element by ID.
+        - reverseText <text>: Reverse the provided text.
+        - changeText <elementId> <text>: Change text of an element by ID.
+        - countdown <seconds>: Start a countdown.
+        - getWindowSize: Display the window size.
+        - showElement <elementId>: Show a hidden element by ID.
+        - generateRandomNumber <min> <max>: Generate a random number.
+        - scrollToBottom: Scroll to the bottom of the page.
+        - help: Display this help message.
+      `;
+      customLog(helpText);
+    };
+
+    document.getElementById("commandInput").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const input = e.target.value.trim();
+        if (input) {
+          const [command, ...args] = input.split(" ");
+          if (commands[command]) {
+            commands[command](args);
+          } else {
+            customLog(`Command not found: ${command}`);
+          }
+        }
+        e.target.value = "";
+      }
+    });
+  </script>
 </body>
 </html>

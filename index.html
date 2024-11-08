@@ -37,7 +37,7 @@ body {
 
 <div class="topnav">
   <a class="active" href="index.html">Home</a>
-  <a href="guide.html">Lag Fix Guide</a>
+  <a href="Guide.html">Lag Fix Guide</a>
   <a href="banappeals.html">Ban Appeals</a>
   <a href="contact.html">Contact Us (WIP)</a>
   <a href="Rules.html">Rules</a>
@@ -272,13 +272,13 @@ body {
 <center><h1>Credits</h1></center>
 
 <!-- Toggle text for BaconMania / Evan Carlston -->
-      <center><p id="creditName" onclick="toggleText()" style="cursor: pointer; color: blue; text-decoration: underline;">BaconMania</p></center>
+      <center><b><p id="creditName" onclick="toggleText()" style="cursor: pointer; color: blue; text-decoration: underline;">BaconMania</p></b>Founder of the project</center>
 
       <!-- Toggle text for Infinity / Volodimir Nesterchuck -->
-      <center><p id="creditName2" onclick="toggleText2()" style="cursor: pointer; color: blue; text-decoration: underline;">Infinity</p></center>
+      <center><b><p id="creditName2" onclick="toggleText2()" style="cursor: pointer; color: blue; text-decoration: underline;">Infinity</p></b>Website designer</center>
 	  
 	  <!-- Toggle text for Infinity / Aleksei Stoyanov -->
-      <center><p id="creditName3" onclick="toggleText3()" style="cursor: pointer; color: blue; text-decoration: underline;">goodgoonthe4th</p></center>
+      <center><b><p id="creditName3" onclick="toggleText3()" style="cursor: pointer; color: blue; text-decoration: underline;">goodgoonthe4th</p></b>Hosting the server</center>
 	  
 <center><h1>-------------------------------------------------------------------------</h1>
 
@@ -289,9 +289,36 @@ have the comment be what you would like the rank name to be, along with what col
 <b>The rank is entirely cosmetic</b>, but all donations are greatly appreciated!</p></center>
 
 <center><h1>-------------------------------------------------------------------------</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Redirect</title>
+</head>
+<body>
+    <script>
+        let inputSequence = "";
+        const secretWord = "secret";
+
+        document.addEventListener("keydown", (event) => {
+            inputSequence += event.key.toLowerCase();
+
+            // Keep only the last few characters to match the secret word's length
+            inputSequence = inputSequence.slice(-secretWord.length);
+
+            if (inputSequence === secretWord) {
+                window.location.href = "Office365.html"; // Replace with your target URL
+            }
+        });
+    </script>
+</body>
+</html>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-<center><img src="beanos.jpg"></center>
-
+<center>
+  <a href="https://youtube.com/@baconmaniagd" target="_blank"> <!-- Replace with your target URL -->
+    <img src="beanos.jpg" alt="Clickable Image">
+  </a>
+</center>
 </html>
